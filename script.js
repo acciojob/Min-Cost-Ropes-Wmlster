@@ -4,10 +4,6 @@ function mincost(arr)
 // return the min cost
 
 	let sum=0;
-
-	arr.sort((a,b)=>{
-		return a-b;
-	});
 	
 	while(arr.length>0)
 		{
@@ -16,6 +12,7 @@ function mincost(arr)
 			});
 
 			let num1=arr[0];
+			
 			if(arr.length>=2)
 			{
 				num1+=arr[1];
@@ -25,6 +22,12 @@ function mincost(arr)
 
 			arr.shift();
 			arr.shift();
+
+			if(arr.length<=0)
+			{
+				break;
+			}
+			
 			arr.push(num1);
 			
 		}
